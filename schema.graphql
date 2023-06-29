@@ -1,0 +1,70 @@
+type _Schema_
+	@fulltext(
+		name: "beanzSearch"
+		language: en
+		algorithm: rank
+		include: [
+			{
+				entity: "TokenMetadata"
+				fields: [
+					{ name: "name" }
+					{ name: "traitType0" }
+					{ name: "traitType1" }
+					{ name: "traitType2" }
+					{ name: "traitType3" }
+					{ name: "traitType4" }
+					{ name: "traitType5" }
+					{ name: "traitType6" }
+					{ name: "traitType7" }
+					{ name: "traitType8" }
+					{ name: "value0" }
+					{ name: "value1" }
+					{ name: "value2" }
+					{ name: "value3" }
+					{ name: "value4" }
+					{ name: "value5" }
+					{ name: "value6" }
+					{ name: "value7" }
+					{ name: "value8" }
+				]
+			}
+		]
+	)
+
+type Token @entity {
+	id: ID!
+	owner: User
+	tokenID: BigInt!
+	tokenURI: String!
+	ipfsURI: TokenMetadata
+	updatedAtTimestamp: BigInt
+}
+
+type TokenMetadata @entity {
+	id: ID!
+	image: String!
+	name: String!
+	traitType0: String!
+	value0: String!
+	traitType1: String!
+	value1: String!
+	traitType2: String
+	value2: String
+	traitType3: String
+	value3: String
+	traitType4: String
+	value4: String
+	traitType5: String
+	value5: String
+	traitType6: String
+	value6: String
+	traitType7: String
+	value7: String
+	traitType8: String
+	value8: String
+}
+
+type User @entity {
+	id: ID!
+	tokens: [Token!]! @derivedFrom(field: "owner")
+}
