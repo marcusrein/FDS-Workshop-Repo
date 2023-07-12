@@ -3,7 +3,6 @@
 ### [Workshop Slides](https://docs.google.com/presentation/d/11CKH20u1VC1SAAAyJY2uvaXnBFbDqlwEcBfhI3KbtKY/edit?usp=sharing)
 
 [![Top Slide](slide1.png)](https://docs.google.com/presentation/d/11CKH20u1VC1SAAAyJY2uvaXnBFbDqlwEcBfhI3KbtKY/edit?usp=sharing)
-[twitter.com/Marcus_Rein\_](https://twitter.com/Marcus_Rein_)
 
 -   This repo has a fully functional subgraph that implements File Data Sources and Full Text Search.
 -   For this workshop, I used this [address](https://etherscan.io/address/0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949) and this [metadata](https://ipfs.io/ipfs/QmdYeDpkVZedk1mkGodjNmF35UNxwafhFLVvsHrWgJoz6A/beanz_metadata/0) from the [Beanz NFT collection](https://opensea.io/collection/beanzofficial).
