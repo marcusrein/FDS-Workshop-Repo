@@ -50,21 +50,17 @@ export class Token extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get owner(): string | null {
+  get owner(): string {
     let value = this.get("owner");
     if (!value || value.kind == ValueKind.NULL) {
-      return null;
+      throw new Error("Cannot return null for a required field.");
     } else {
       return value.toString();
     }
   }
 
-  set owner(value: string | null) {
-    if (!value) {
-      this.unset("owner");
-    } else {
-      this.set("owner", Value.fromString(<string>value));
-    }
+  set owner(value: string) {
+    this.set("owner", Value.fromString(value));
   }
 
   get tokenID(): BigInt {
@@ -93,8 +89,8 @@ export class Token extends Entity {
     this.set("tokenURI", Value.fromString(value));
   }
 
-  get ipfsURI(): string | null {
-    let value = this.get("ipfsURI");
+  get ipfsHashURI(): string | null {
+    let value = this.get("ipfsHashURI");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
@@ -102,11 +98,11 @@ export class Token extends Entity {
     }
   }
 
-  set ipfsURI(value: string | null) {
+  set ipfsHashURI(value: string | null) {
     if (!value) {
-      this.unset("ipfsURI");
+      this.unset("ipfsHashURI");
     } else {
-      this.set("ipfsURI", Value.fromString(<string>value));
+      this.set("ipfsHashURI", Value.fromString(<string>value));
     }
   }
 

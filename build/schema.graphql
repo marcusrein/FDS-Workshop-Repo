@@ -1,3 +1,41 @@
+type Token @entity {
+	id: ID!
+	owner: User!
+	tokenID: BigInt!
+	tokenURI: String!
+	ipfsHashURI: TokenMetadata
+	updatedAtTimestamp: BigInt
+}
+
+type TokenMetadata @entity {
+	id: ID!
+	image: String!
+	name: String!
+	traitType0: String!
+	value0: String!
+	traitType1: String!
+	value1: String!
+	traitType2: String
+	value2: String
+	traitType3: String
+	value3: String
+	traitType4: String
+	value4: String
+	traitType5: String
+	value5: String
+	traitType6: String
+	value6: String
+	traitType7: String
+	value7: String
+	traitType8: String
+	value8: String
+}
+
+type User @entity {
+	id: ID!
+	tokens: [Token!]! @derivedFrom(field: "owner")
+}
+
 type _Schema_
 	@fulltext(
 		name: "beanzSearch"
@@ -30,41 +68,3 @@ type _Schema_
 			}
 		]
 	)
-
-type Token @entity {
-	id: ID!
-	owner: User
-	tokenID: BigInt!
-	tokenURI: String!
-	ipfsURI: TokenMetadata
-	updatedAtTimestamp: BigInt
-}
-
-type TokenMetadata @entity {
-	id: ID!
-	image: String!
-	name: String!
-	traitType0: String!
-	value0: String!
-	traitType1: String!
-	value1: String!
-	traitType2: String
-	value2: String
-	traitType3: String
-	value3: String
-	traitType4: String
-	value4: String
-	traitType5: String
-	value5: String
-	traitType6: String
-	value6: String
-	traitType7: String
-	value7: String
-	traitType8: String
-	value8: String
-}
-
-type User @entity {
-	id: ID!
-	tokens: [Token!]! @derivedFrom(field: "owner")
-}
