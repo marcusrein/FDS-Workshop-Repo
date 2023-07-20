@@ -2,7 +2,7 @@
 
 ### [Workshop Slides](https://docs.google.com/presentation/d/11CKH20u1VC1SAAAyJY2uvaXnBFbDqlwEcBfhI3KbtKY/edit?usp=sharing)
 
-[![Top Slide](slide1.png)](https://docs.google.com/presentation/d/11CKH20u1VC1SAAAyJY2uvaXnBFbDqlwEcBfhI3KbtKY/edit?usp=sharing)
+[![Top Slide](slide1.jpg)](https://docs.google.com/presentation/d/11CKH20u1VC1SAAAyJY2uvaXnBFbDqlwEcBfhI3KbtKY/edit?usp=sharing)
 
 -   This repo has a fully functional subgraph that implements File Data Sources and Full Text Search.
 -   For this workshop, I used this [address](https://etherscan.io/address/0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949) and this [metadata](https://ipfs.io/ipfs/QmdYeDpkVZedk1mkGodjNmF35UNxwafhFLVvsHrWgJoz6A/beanz_metadata/0) from the [Beanz NFT collection](https://opensea.io/collection/beanzofficial).
@@ -12,7 +12,7 @@
 
 -   Install graph-cli: `yarn global add @graphprotocol/graph-cli`
 
-## Deploy Subgraph
+## Option 1: Deploy This Repo's Premade File Data Sources Subgraph
 
 -   Create a subgraph through [Subgraph Studio](www.thegraph.com/studio) but do not deploy it. You'll be deploying this repo's subgraph to your newly created Subgraph Studio dashboard.
 
@@ -23,7 +23,7 @@
 
 **On first deploy, File Data Sources takes 20-30 min to gather all historical NFT data from IPFS. **
 
-## Index A Different NFT
+## Option 2: Deploy a File Data Sources Endabled Subgraph That Indexes A Different NFT
 
 Use a NFT marketplace like Opensea to find an NFT and gather its contract address and open its link to its IPFS metadata.
 
