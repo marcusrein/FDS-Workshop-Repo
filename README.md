@@ -19,7 +19,8 @@
 -   Clone this repo, then `yarn install`.
 -   Copy/paste the Authentication Key from Subgraph Studio into your terminal.
 -   `cd <yourSubgraphFolder>` from this repo and copy/paste the `graph deploy --studio <nameOfYourSubgraph>` from Subgraph Studio into your terminal.
--   Begin exploring our File Data Sources subgraph!
+-   Begin querying our File Data Sources subgraph!
+-   This repo's subgraph has [Full Text Search](https://thegraph.com/docs/en/developing/creating-a-subgraph/#defining-fulltext-search-fields) feature integrated as its quite useful when querying NFT Metadata.
 
 **On first deploy, File Data Sources takes 20-30 min to gather all historical NFT data from IPFS. **
 
