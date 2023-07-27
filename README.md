@@ -49,13 +49,38 @@ Use [Miniscan](https://miniscan.xyz/) to find important information relevant to 
 -   schema.graphql (Presented Subgraph Data)
 -   Refer to documentation and the subgraph in this repo for specific changes and techniques.
 
+## Option 3: Build With Data Edge Contracts
+
+-   Read [The Graph Unlocks a New Web3 Use Case: Organizing Off-chain Data](https://thegraph.com/blog/the-graph-off-chain-data-web3-data-pipelines/) by Craig Tutterow
+-   Learn about the [Data Edge GIP](https://forum.thegraph.com/t/gip-0025-dataedge/3161)
+-   Send the Data Edge smart contract the Qm hash and any other metadata you'd like formatted properly, and it will emit that message as an event. Useful for getting the chain to trigger a IPFS file search for a specific hash that was passed to the smart contract.
+
+```solidity
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+pragma solidity ^0.8.12;
+
+/// @title Data Edge contract is only used to store on-chain data, it does not
+///        perform execution. On-chain client services can read the data
+///        and decode the payload for different purposes.
+///        NOTE: This version emits an event with the calldata.
+contract EventfulDataEdge {
+    event Log(bytes data);
+
+    /// @dev Fallback function, accepts any payload
+    fallback() external payable {
+        emit Log(msg.data);
+    }
+}
+```
+
 ## Official File Data Sources Documentation
 
 -   https://thegraph.com/docs/en/developing/creating-a-subgraph/#file-data-sources
 
 ## Other good subgraphs:
 
--   [Cryptocoven File Data Sources Subgraph](https://github.com/azf20/cryptocoven-api/tree/file-data-sources-refactor)
+-   [Cryptocoven File Data Sources (and older ipfs.cat) Subgraph](https://github.com/azf20/cryptocoven-api/tree/file-data-sources-refactor)
 -   [Messari Subgraphs](https://subgraphs.messari.io)
 -   [EIP-721 (NFTS on The Graph Network)](https://thegraph.com/explorer/subgraph?id=AVZ1dGwmRGKsbDAbwvxNmXzeEkD48voB3LfGqj5w7FUS&view=Overview)
 -   [Lens Protocol](https://thegraph.com/hosted-service/subgraph/anudit/lens-protocol)
@@ -79,3 +104,7 @@ Use [Miniscan](https://miniscan.xyz/) to find important information relevant to 
 -   https://thegraph.com/docs/developer/quick-start
 -   https://thegraph.com/discord
 -   https://protean-labs.github.io/subgrounds/
+
+```
+
+```
