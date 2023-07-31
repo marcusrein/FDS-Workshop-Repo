@@ -14,15 +14,14 @@
 
 ## Option 1: Deploy This Repo's Premade File Data Sources Subgraph
 
--   Create a subgraph through [Subgraph Studio](www.thegraph.com/studio) but do not deploy it. You'll be deploying this repo's subgraph to your newly created Subgraph Studio dashboard.
+-   Create a subgraph through [Subgraph Studio](www.thegraph.com/studio) but do not deploy it just yet. Instead of deploying a boilerplate subgraph, you'll be deploying this repo's subgraph to your newly created Subgraph Studio dashboard.
 
 -   Clone this repo, then `yarn install`.
--   Copy/paste the Authentication Key from Subgraph Studio into your terminal.
--   `cd <yourSubgraphFolder>` from this repo and copy/paste the `graph deploy --studio <nameOfYourSubgraph>` from Subgraph Studio into your terminal.
+-   Copy/paste the Authentication Key from Subgraph Studio into your terminal and authenticate your computer.
+-   `cd <yourSubgraphFolder>` from this repo and copy/paste the `graph deploy --studio <nameOfYourSubgraph>` from Subgraph Studio into your terminal to deploy this repo's subgraph.
+-   Wait 20-30 min for the subgraph to index IPFS. Once indexed, you will not have to wait this long again. 
 -   Begin querying our File Data Sources subgraph!
 -   This repo's subgraph has [Full Text Search](https://thegraph.com/docs/en/developing/creating-a-subgraph/#defining-fulltext-search-fields) feature integrated as its quite useful when querying NFT Metadata.
-
-**On first deploy, File Data Sources takes 20-30 min to gather all historical NFT data from IPFS. **
 
 ## Option 2: Deploy a File Data Sources Endabled Subgraph That Indexes A Different NFT
 
