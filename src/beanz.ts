@@ -21,8 +21,6 @@ export function handleTransfer(event: TransferEvent): void {
 
 	if (!token) {
 		token = new Token(event.params.tokenId.toString());
-		// Whoever the token was transferred to is the owner, so assign the 'to' to the token.owner field as well as assign the tokenId to the token.tokenID field.
-		token.owner = event.params.to.toHexString();
 		token.tokenID = event.params.tokenId;
 
 		// Create the tokenURI for both recordkeeping as well as to create the ipfsHashUri below VVV.
@@ -35,6 +33,7 @@ export function handleTransfer(event: TransferEvent): void {
 
 		TokenMetadataTemplate.create(ipfsHashUri);
 	}
+	token.owner = event.params.to.toHexString();
 	token.updatedAtTimestamp = event.block.timestamp;
 	token.save();
 
